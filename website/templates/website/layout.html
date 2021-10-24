@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+	    <header class="jumbotron text-center bg-warning">
+            <h1>HTML&CSS</h1>
+            <p>Django</p>
+            <nav>
+                <a href="{% url 'website:home' %}" class="btn btn-secondary">HTML&CSS</a>
+                <a href="{% url 'website:about' %}" class="btn btn-secondary">HTML</a>
+                <a href="{% url 'website:contacts' %}" class="btn btn-secondary">CSS</a>
+            </nav>
+        </header>
+	    <article class="container">
+		    <main class="col-sm-6 float-lg-right">
+            	{% block main %}
+	            {% endblock main %}
+                {% load static %}
+                <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+            </main>
+		    <aside class="col-sm-6">
+                {% load static %}
+                <img src="{% static 'website/images/HTML&CSS.png' %}">
+            </aside>
+	    </article>
+	    <footer class="fixed-bottom bg-secondary bg-gradient text-white">Made By André Cachão</footer>
+    </body>
+</html>
